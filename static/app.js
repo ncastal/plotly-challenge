@@ -54,7 +54,7 @@ function init(){
     })
 }
 //creates values and text for dropdown
-d3.json("/static/data/samples.json").then(function(data){
+d3.json("static/data/samples.json").then(function(data){
     console.log(data);
     var dropDown = d3.select("#selDataset");
     var names= data.names;
@@ -66,7 +66,7 @@ d3.json("/static/data/samples.json").then(function(data){
 //reloads all the charts and demographic info with user picked individual from dropdown
 function optionChanged(value){
     var val=value;
-    d3.json("/static/data/samples.json").then(function(data1){
+    d3.json("static/data/samples.json").then(function(data1){
         console.log(val);
         idUser=Object.values(data1.samples[val]);
         console.log(idUser);
